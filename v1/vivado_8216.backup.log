@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Feb 14 14:25:14 2019
+# Process ID: 8216
+# Current directory: E:/4730/project3/v1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent616 E:\4730\project3\v1\v1.xpr
+# Log file: E:/4730/project3/v1/vivado.log
+# Journal file: E:/4730/project3/v1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/4730/project3/v1/v1.xpr
+INFO: [Project 1-313] Project file moved from 'I:/4730/project3/v1' since last save.
+Scanning sources...
+Finished scanning sources
+CRITICAL WARNING: [Board 49-67] The board_part definition was not found for digilentinc.com:zybo-z7-10:part0:1.0. This can happen sometimes when you use custom board part. You can resolve this issue by setting 'board.repoPaths' parameter, pointing to the location of custom board files. Valid board_part values can be retrieved with the 'get_board_parts' Tcl command.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/4730/project3/ip_repo/multiply_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/x/Vivado/2018.3/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'mult.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+mult_processing_system7_0_0
+mult_rst_ps7_0_100M_0
+
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 751.313 ; gain = 123.309
+update_compile_order -fileset sources_1
+launch_sdk -workspace E:/4730/project3/v1/v1.sdk -hwspec E:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace E:/4730/project3/v1/v1.sdk -hwspec E:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 14 14:52:51 2019...

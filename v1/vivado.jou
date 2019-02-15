@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Feb 14 14:54:45 2019
+# Process ID: 9544
+# Current directory: E:/4730/project3/v1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11648 E:\4730\project3\v1\v1.xpr
+# Log file: E:/4730/project3/v1/vivado.log
+# Journal file: E:/4730/project3/v1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/4730/project3/v1/v1.xpr
+update_compile_order -fileset sources_1
+open_bd_design {E:/4730/project3/v1/v1.srcs/sources_1/bd/mult/mult.bd}
+ipx::edit_ip_in_project -upgrade true -name multiply_v1_0_project -directory E:/4730/project3/v1/v1.tmp/multiply_v1_0_project e:/4730/project3/ip_repo/multiply_1.0/component.xml
+update_compile_order -fileset sources_1
+current_project v1
+file copy -force E:/4730/project3/v1/v1.runs/impl_1/mult_wrapper.sysdef E:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+
+launch_sdk -workspace E:/4730/project3/v1/v1.sdk -hwspec E:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+current_project multiply_v1_0_project
+close_project

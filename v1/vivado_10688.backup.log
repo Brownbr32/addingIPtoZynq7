@@ -1,0 +1,245 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Feb 12 20:15:00 2019
+# Process ID: 10688
+# Current directory: I:/4730/project3/v1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13760 I:\4730\project3\v1\v1.xpr
+# Log file: I:/4730/project3/v1/vivado.log
+# Journal file: I:/4730/project3/v1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project I:/4730/project3/v1/v1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'i:/4730/project3/ip_repo/multiply_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 703.863 ; gain = 108.574
+update_compile_order -fileset sources_1
+launch_sdk -workspace I:/4730/project3/v1/v1.sdk -hwspec I:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace I:/4730/project3/v1/v1.sdk -hwspec I:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+open_bd_design {I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/mult.bd}
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:user:multiply:1.0 - multiply_0
+Adding cell -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Successfully read diagram <mult> from BD file <I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/mult.bd>
+open_bd_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 916.523 ; gain = 22.293
+ipx::edit_ip_in_project -upgrade true -name multiply_v1_0_project -directory I:/4730/project3/v1/v1.tmp/multiply_v1_0_project i:/4730/project3/ip_repo/multiply_1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 934.652 ; gain = 0.000
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'i:/4730/project3/ip_repo/multiply_1.0'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [i:/4730/project3/ip_repo/multiply_1.0/hdl/multiply_v1_0_S00_AXI.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [i:/4730/project3/ip_repo/multiply_1.0/hdl/multiply_v1_0.v:]
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 973.215 ; gain = 38.563
+update_compile_order -fileset sources_1
+set_property core_revision 3 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path i:/4730/project3/ip_repo/multiply_1.0
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'i:/4730/project3/ip_repo/multiply_1.0'
+make_wrapper -files [get_files I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/mult.bd] -top
+ERROR: [BD 41-1665] Unable to generate top-level wrapper HDL for the BD-design 'mult.bd' is locked. Locked reason(s):
+* Block design contains locked IPs. Please run report_ip_status for more details and recommendations on how to fix this issue. 
+List of locked IPs: 
+mult_multiply_0_0
+
+ERROR: [Common 17-39] 'make_wrapper' failed due to earlier errors.
+make_wrapper -files [get_files I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/mult.bd] -top
+ERROR: [BD 41-1665] Unable to generate top-level wrapper HDL for the BD-design 'mult.bd' is locked. Locked reason(s):
+* Block design contains locked IPs. Please run report_ip_status for more details and recommendations on how to fix this issue. 
+List of locked IPs: 
+mult_multiply_0_0
+
+ERROR: [Common 17-39] 'make_wrapper' failed due to earlier errors.
+report_ip_status -name ip_status
+delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M00_AXI] [get_bd_cells multiply_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:multiply:1.0 multiply_0
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/multiply_0/S00_AXI} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins multiply_0/S00_AXI]
+</multiply_0/S00_AXI/S00_AXI_reg> is being mapped into </processing_system7_0/Data> at <0x43C00000 [ 64K ]>
+ipx::edit_ip_in_project -upgrade true -name multiply_v1_0_project -directory I:/4730/project3/v1/v1.tmp/multiply_v1_0_project i:/4730/project3/ip_repo/multiply_1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1032.031 ; gain = 2.430
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'i:/4730/project3/ip_repo/multiply_1.0'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [i:/4730/project3/ip_repo/multiply_1.0/hdl/multiply_v1_0_S00_AXI.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [i:/4730/project3/ip_repo/multiply_1.0/hdl/multiply_v1_0.v:]
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1032.031 ; gain = 2.430
+update_compile_order -fileset sources_1
+set_property core_revision 4 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+current_project v1
+make_wrapper -files [get_files I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/mult.bd] -top
+Wrote  : <I:\4730\project3\v1\v1.srcs\sources_1\bd\mult\mult.bd> 
+Wrote  : <I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/ui/bd_561af610.ui> 
+VHDL Output written to : I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/synth/mult.v
+VHDL Output written to : I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/sim/mult.v
+VHDL Output written to : I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/hdl/mult_wrapper.v
+make_wrapper -files [get_files I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/mult.bd] -top
+INFO: [BD 41-1662] The design 'mult.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/synth/mult.v
+VHDL Output written to : I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/sim/mult.v
+VHDL Output written to : I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/hdl/mult_wrapper.v
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+INFO: [BD 41-1662] The design 'mult.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/synth/mult.v
+VHDL Output written to : I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/sim/mult.v
+VHDL Output written to : I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/hdl/mult_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'i:/4730/project3/v1/v1.srcs/sources_1/bd/mult/ip/mult_auto_pc_0/mult_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block multiply_0 .
+Exporting to file I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/hw_handoff/mult.hwh
+Generated Block Design Tcl file I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/hw_handoff/mult_bd.tcl
+Generated Hardware Definition File I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/synth/mult.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP mult_auto_pc_0, cache-ID = 424e1613fe29c934; cache size = 2.144 MB.
+[Tue Feb 12 20:58:57 2019] Launched mult_multiply_0_1_synth_1, synth_1...
+Run output will be captured here:
+mult_multiply_0_1_synth_1: I:/4730/project3/v1/v1.runs/mult_multiply_0_1_synth_1/runme.log
+synth_1: I:/4730/project3/v1/v1.runs/synth_1/runme.log
+[Tue Feb 12 20:58:57 2019] Launched impl_1...
+Run output will be captured here: I:/4730/project3/v1/v1.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:03 ; elapsed = 00:00:18 . Memory (MB): peak = 1208.039 ; gain = 43.090
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 22 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.312 . Memory (MB): peak = 1957.297 ; gain = 0.000
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.312 . Memory (MB): peak = 1957.297 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1957.297 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 2081.852 ; gain = 873.813
+file copy -force I:/4730/project3/v1/v1.runs/impl_1/mult_wrapper.sysdef I:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+
+launch_sdk -workspace I:/4730/project3/v1/v1.sdk -hwspec I:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace I:/4730/project3/v1/v1.sdk -hwspec I:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+file copy -force I:/4730/project3/v1/v1.runs/impl_1/mult_wrapper.sysdef I:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+
+launch_sdk -workspace I:/4730/project3/v1/v1.sdk -hwspec I:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace I:/4730/project3/v1/v1.sdk -hwspec I:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+file mkdir I:/4730/project3/v1/v1.sdk
+file copy -force I:/4730/project3/v1/v1.runs/impl_1/mult_wrapper.sysdef I:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+
+launch_sdk -workspace I:/4730/project3/v1/v1.sdk -hwspec I:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace I:/4730/project3/v1/v1.sdk -hwspec I:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+current_project multiply_v1_0_project
+set_property core_revision 5 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+set_property core_revision 6 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path i:/4730/project3/ip_repo/multiply_1.0
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'i:/4730/project3/ip_repo/multiply_1.0'
+open_bd_design {I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/mult.bd}
+make_wrapper -files [get_files I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/mult.bd] -top
+ERROR: [BD 41-1665] Unable to generate top-level wrapper HDL for the BD-design 'mult.bd' is locked. Locked reason(s):
+* Block design contains locked IPs. Please run report_ip_status for more details and recommendations on how to fix this issue. 
+List of locked IPs: 
+mult_multiply_0_1
+
+ERROR: [Common 17-39] 'make_wrapper' failed due to earlier errors.
+delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M00_AXI] [get_bd_cells multiply_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:multiply:1.0 multiply_0
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/multiply_0/S00_AXI} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins multiply_0/S00_AXI]
+</multiply_0/S00_AXI/S00_AXI_reg> is being mapped into </processing_system7_0/Data> at <0x43C00000 [ 64K ]>
+make_wrapper -files [get_files I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/mult.bd] -top
+Wrote  : <I:\4730\project3\v1\v1.srcs\sources_1\bd\mult\mult.bd> 
+Wrote  : <I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/ui/bd_561af610.ui> 
+VHDL Output written to : I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/synth/mult.v
+VHDL Output written to : I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/sim/mult.v
+VHDL Output written to : I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/hdl/mult_wrapper.v
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+INFO: [BD 41-1662] The design 'mult.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/synth/mult.v
+VHDL Output written to : I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/sim/mult.v
+VHDL Output written to : I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/hdl/mult_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'i:/4730/project3/v1/v1.srcs/sources_1/bd/mult/ip/mult_auto_pc_0/mult_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block multiply_0 .
+Exporting to file I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/hw_handoff/mult.hwh
+Generated Block Design Tcl file I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/hw_handoff/mult_bd.tcl
+Generated Hardware Definition File I:/4730/project3/v1/v1.srcs/sources_1/bd/mult/synth/mult.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP mult_auto_pc_0, cache-ID = 424e1613fe29c934; cache size = 2.446 MB.
+[Tue Feb 12 21:17:09 2019] Launched mult_multiply_0_0_synth_1, synth_1...
+Run output will be captured here:
+mult_multiply_0_0_synth_1: I:/4730/project3/v1/v1.runs/mult_multiply_0_0_synth_1/runme.log
+synth_1: I:/4730/project3/v1/v1.runs/synth_1/runme.log
+[Tue Feb 12 21:17:09 2019] Launched impl_1...
+Run output will be captured here: I:/4730/project3/v1/v1.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:00:17 . Memory (MB): peak = 2360.543 ; gain = 38.379
+file copy -force I:/4730/project3/v1/v1.runs/impl_1/mult_wrapper.sysdef I:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+
+file copy -force I:/4730/project3/v1/v1.runs/impl_1/mult_wrapper.sysdef I:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+
+launch_sdk -workspace I:/4730/project3/v1/v1.sdk -hwspec I:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace I:/4730/project3/v1/v1.sdk -hwspec I:/4730/project3/v1/v1.sdk/mult_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+ipx::edit_ip_in_project -upgrade true -name multiply_v1_0_project -directory I:/4730/project3/v1/v1.tmp/multiply_v1_0_project i:/4730/project3/ip_repo/multiply_1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 2364.512 ; gain = 0.000
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'i:/4730/project3/ip_repo/multiply_1.0'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [i:/4730/project3/ip_repo/multiply_1.0/hdl/multiply_v1_0_S00_AXI.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [i:/4730/project3/ip_repo/multiply_1.0/hdl/multiply_v1_0.v:]
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 2364.512 ; gain = 0.000
+update_compile_order -fileset sources_1
+close_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 12 21:29:57 2019...
